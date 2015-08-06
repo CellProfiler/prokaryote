@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.cellprofiler</groupId>
-    <artifactId>cellprofiler-java</artifactId>
-    <version>2.2.2-SNAPSHOT</version>
+    <artifactId>prokaryote</artifactId>
+    <version>1.0.0</version>
     <dependencies>
         <dependency>
             <groupId>omero</groupId>
@@ -91,10 +91,7 @@
         <version>3.7</version>
     </parent>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <bio-formats.version>5.1.1</bio-formats.version>
-        <omero.version>5.1.1-ice35-b43</omero.version>
     </properties>
     <build>
         <plugins>
@@ -103,49 +100,6 @@
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4</version>
                 <configuration>
-                    <rules>
-                        <banDuplicateClasses>
-                            <dependencies>
-                                <dependency>
-                                    <artifactId>jcodings</artifactId>
-                                    <ignoreClasses>
-                                        <ignoreClass>org/jcodings/*</ignoreClass>
-                                    </ignoreClasses>
-                                </dependency>
-                                <dependency>
-                                    <artifactId>jnr-constants</artifactId>
-                                    <ignoreClasses>
-                                        <ignoreClass>com/kenai/constantine/*</ignoreClass>
-                                        <ignoreClass>jnr/constants/*</ignoreClass>
-                                    </ignoreClasses>
-                                </dependency>
-                                <dependency>
-                                    <artifactId>jnr-ffi</artifactId>
-                                    <ignoreClasses>
-                                        <ignoreClass>jnr/ffi/*</ignoreClass>
-                                    </ignoreClasses>
-                                </dependency>
-                                <dependency>
-                                    <artifactId>jython-standalone</artifactId>
-                                    <ignoreClasses>
-                                        <ignoreClass>jnr/netdb/*</ignoreClass>
-                                        <ignoreClass>com/kenai/jffi/*</ignoreClass>
-                                    </ignoreClasses>
-                                </dependency>
-                                <dependency>
-                                    <artifactId>imglib2-ops</artifactId>
-                                    <ignoreClasses>
-                                        <ignoreClass>net/imglib2/ops/*</ignoreClass>
-                                    </ignoreClasses>
-                                </dependency>
-                            </dependencies>
-                        </banDuplicateClasses>
-                        <enforceBytecodeVersion>
-                            <excludes>
-                                <exclude>com.headius:invokebinder</exclude>
-                            </excludes>
-                        </enforceBytecodeVersion>
-                    </rules>
                     <fail>false</fail>
                 </configuration>
             </plugin>
@@ -166,10 +120,10 @@
             </plugin>
         </plugins>
     </build>
-    <name>cellprofiler-java</name>
-    <description>CellProfiler-java is a package of Java support routines for CellProfiler.</description>
-    <url>http://cellprofiler.org</url>
-    <inceptionYear>2003</inceptionYear>
+    <name>prokaryote</name>
+    <description>CellProfiler’s Java dependencies</description>
+    <url>https://github.com/CellProfiler/prokaryote</url>
+    <inceptionYear>2015</inceptionYear>
     <licenses>
         <license>
             <name>GNU General Public License, version 2 (GPL-2.0)</name>
@@ -183,6 +137,40 @@
     </organization>
     <developers>
         <developer>
+            <id>mbray</id>
+            <name>Mark Bray</name>
+            <email>mbray@broadinstitute.org</email>
+            <organization>Broad Institute</organization>
+            <organizationUrl>http://broadinstitute.org</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <id>anne</id>
+            <name>Anne Carpenter</name>
+            <email>anne@broadinstitute.org</email>
+            <organization>Broad Institute</organization>
+            <organizationUrl>http://broadinstitute.org</organizationUrl>
+            <roles>
+                <role>principal investigator</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <id>thouis</id>
+            <name>Ray Jones</name>
+            <email>thouis@seas.harvard.edu</email>
+            <organization>Harvard University</organization>
+            <organizationUrl>http://seas.harvard.edu</organizationUrl>
+            <roles>
+                <role>developer</role>
+                <role>emeritus</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
             <id>leek</id>
             <name>Lee Kamentsky</name>
             <email>leek@broadinstitute.org</email>
@@ -190,17 +178,6 @@
             <organizationUrl>http://broadinstitute.org</organizationUrl>
             <roles>
                 <role>architect</role>
-                <role>developer</role>
-            </roles>
-            <timezone>-5</timezone>
-        </developer>
-        <developer>
-            <id>mbray</id>
-            <name>Mark Bray</name>
-            <email>mbray@broadinstitute.org</email>
-            <organization>Broad Institute</organization>
-            <organizationUrl>http://broadinstitute.org</organizationUrl>
-            <roles>
                 <role>developer</role>
             </roles>
             <timezone>-5</timezone>
@@ -224,29 +201,6 @@
             <organizationUrl>http://broadinstitute.org</organizationUrl>
             <roles>
                 <role>developer</role>
-            </roles>
-            <timezone>-5</timezone>
-        </developer>
-        <developer>
-            <id>thouis</id>
-            <name>Ray Jones</name>
-            <email>thouis@seas.harvard.edu</email>
-            <organization>Harvard University</organization>
-            <organizationUrl>http://seas.harvard.edu</organizationUrl>
-            <roles>
-                <role>developer</role>
-                <role>emeritus</role>
-            </roles>
-            <timezone>-5</timezone>
-        </developer>
-        <developer>
-            <id>anne</id>
-            <name>Anne Carpenter</name>
-            <email>anne@broadinstitute.org</email>
-            <organization>Broad Institute</organization>
-            <organizationUrl>http://broadinstitute.org</organizationUrl>
-            <roles>
-                <role>principal investigator</role>
             </roles>
             <timezone>-5</timezone>
         </developer>
@@ -298,16 +252,16 @@
     </repositories>
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/CellProfiler/java/issues</url>
+        <url>https://github.com/CellProfiler/prokaryote/issues</url>
     </issueManagement>
     <ciManagement>
     </ciManagement>
     <mailingLists>
     </mailingLists>
     <scm>
-        <connection>scm:git:git://github.com/CellProfiler/cellprofiler-java</connection>
-        <developerConnection>scm:git:git@github.com:CellProfiler/cellprofiler-java</developerConnection>
+        <connection>scm:git:git://github.com/CellProfiler/prokaryote</connection>
+        <developerConnection>scm:git:git@github.com:CellProfiler/prokaryote</developerConnection>
         <tag>HEAD</tag>
-        <url>https://github.com/CellProfiler/cellprofiler-java</url>
+        <url>https://github.com/CellProfiler/prokaryote</url>
     </scm>
 </project>
