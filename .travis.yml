@@ -1,3 +1,13 @@
+deploy:
+  provider: releases
+  api_key:
+    secure: CNeBIB0k/1dCqvGwaZF9Rl+d12+ErXP7tx7/NFs7a/JBShy8pC+Vak6sWfpduQKKAurjgmT/4v1zCP+DddkwgB4hLp+NBq+3aIb4ky7Wy0Ja34YpAjoEJDE79DiG1zwGgce0QPXiipiZSEu/Qlhyw1PMCVUT6AoWqI3RsfMih7E1iwsYfEi1ckKoogGBu4bdj0kYCv+wAeGsWTYWLQM3NbhQ1/aBN6A1yY3c0LWYy9Svmmtd9FIIm6T/t3E8Pd10XhqTdyCTJryYWb0XcGfcKfL7nAKPmMvt3c4YsZb9ccMmYlu7xSjvlatMCNB3OOmWGXxq/A6KgkxsoC7pyWGU2TqIPPnGJ4d3iZV7dPVYWnHqX/BkK/XXgFam88cjlbbUVHTMxvr9eF4GxaMcuQ/AwAc/uxW8cnnu3B56SqdKJzJ2cYLuIION/RYika7JopACMemASZRY+kgNjrGfcme2RLhng1OHTN5UxOBlX5xBN/4/6AfHbY+1iFGhEPZpsj0WXlm4GaoyN/StgIP35fsUP4W24c/Wql9Yr+Vemyz/64czwoDAothyDqiwOQCBx3/favm38YAexdstUI6JmZ5UpqpspTB8TyERClDvYy+F03JNwb/N+XW26WS8ODJSA8ZAAKimJtB/UJ0gTx93TGzyjvJH2XAtSZdPp2PNL6RSKOs=
+  file: target/prokaryote-1.0.0.jar
+  on:
+    jdk:
+        - openjdk7
+    repo: CellProfiler/prokaryote
+    tags: true
 jdk:
     - openjdk6
     - openjdk7
