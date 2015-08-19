@@ -84,6 +84,11 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.12</version>
         </dependency>
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>ij1-patcher</artifactId>
+            <version>0.12.2</version>
+        </dependency>
     </dependencies>
     <parent>
         <groupId>org.scijava</groupId>
