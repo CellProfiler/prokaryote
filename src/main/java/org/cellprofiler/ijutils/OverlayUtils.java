@@ -5,9 +5,9 @@
  * Copyright (c) 2003-2009 Massachusetts Institute of Technology
  * Copyright (c) 2009-2015 Broad Institute
  * All rights reserved.
- * 
+ *
  * Please see the AUTHORS file for credits.
- * 
+ *
  * Website: http://www.cellprofiler.org
  */
 package org.cellprofiler.ijutils;
@@ -17,14 +17,11 @@ import net.imagej.display.ImageDisplay;
 import net.imagej.display.OverlayView;
 import net.imagej.overlay.Overlay;
 import net.imglib2.Cursor;
-import net.imglib2.Interval;
 import net.imglib2.IterableInterval;
 import net.imglib2.RandomAccessibleInterval;
 import net.imglib2.RealRandomAccess;
 import net.imglib2.img.Img;
 import net.imglib2.img.array.ArrayImgs;
-import net.imglib2.img.planar.PlanarImgFactory;
-import net.imglib2.img.transform.ImgTranslationAdapter;
 import net.imglib2.meta.Axes;
 import net.imglib2.meta.AxisType;
 import net.imglib2.roi.IterableRegionOfInterest;
@@ -34,7 +31,7 @@ import net.imglib2.view.Views;
 
 /**
  * @author Lee Kamentsky
- * 
+ *
  * This "class" contains Java code to manipulate
  * overlays in ImageJ ImageDisplays
  *
@@ -60,7 +57,7 @@ public class OverlayUtils {
 			RandomAccessibleInterval<BitType> adapter = mask;
 			long [] offset = new long[display.numDimensions()];
 			AxisType [] dAxes = new AxisType [] { Axes.Y, Axes.X };
-				
+
 			for (int j=0; j<dAxes.length; j++) {
 				int i = overlay.dimensionIndex(dAxes[j]);
 				offset[j] = display.getLongPosition(dAxes[j]) - oView.getLongPosition(dAxes[j]);
@@ -74,14 +71,14 @@ public class OverlayUtils {
 					dAxes[j] = temp;
 				}
 			}
-			adapter = Views.translate(adapter, offset); 
+			adapter = Views.translate(adapter, offset);
 			RegionOfInterest roi = overlay.getRegionOfInterest();
 			if (roi instanceof IterableRegionOfInterest) {
 				/*
 				 * Yay! We can iterate over the pixels to turn each of them on.
 				 */
-				IterableInterval<BitType> ii = 
-					((IterableRegionOfInterest) roi).getIterableIntervalOverROI(adapter);
+				IterableInterval<BitType> ii =
+						((IterableRegionOfInterest) roi).getIterableIntervalOverROI(adapter);
 				Cursor<BitType> c = ii.cursor();
 				while(c.hasNext()){
 					c.next().set(true);
@@ -101,17 +98,17 @@ public class OverlayUtils {
 		}
 		return mask;
 	}
-	
+
 	/**
 	 * Create a bit type image that covers the given interval
-	 * 
+	 *
 	 * @param interval - an interval, typically that of a display
-	 * 
+	 *
 	 * @return a bit image of the interval, initialized to zero.
-	 * 
+	 *
 	 */
 	public static Img<BitType> createBitMask(ImageDisplay interval) {
-		long [] dimensions = new long [] { 
+		long [] dimensions = new long [] {
 				interval.max(interval.dimensionIndex(Axes.Y))+1,
 				interval.max(interval.dimensionIndex(Axes.X))+1
 		};
