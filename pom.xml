@@ -123,6 +123,11 @@
                             </excludes>
                         </filter>
                     </filters>
+                    <transformers>
+                    	<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                    	    <resource>META-INF/json/org.scijava.plugin.Plugin</resource>
+                    	</transformer>
+                    </transformers>
                 </configuration>
                 <executions>
                     <execution>
