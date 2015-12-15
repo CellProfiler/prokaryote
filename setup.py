@@ -12,7 +12,7 @@ setuptools.dist.Distribution({
     ]
 })
 
-with open("prokaryote/__init__.py", 'r') as fd:
+with open("prokaryote/__init__.py", "r") as fd:
     version = re.search(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", fd.read(), re.MULTILINE).group(1)
 
 
@@ -89,5 +89,5 @@ setuptools.setup(
             "requests"
         ],
         url="https://github.com/CellProfiler/prokaryote",
-        version="1.0.4"
+        version=version
 )
