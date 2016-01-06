@@ -23,42 +23,30 @@ class Install(setuptools.command.install.install):
         except ImportError:
             raise ImportError
 
-        directory = os.path.join(self.build_lib, "prokaryote")
+        directory = os.path.join("prokaryote")
 
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-        prokaryote = "{}/prokaryote.jar".format(os.path.abspath(directory))
+        prokaryote = "{}/prokaryote.jar".format(directory)
 
         resource = "https://github.com/CellProfiler/prokaryote/releases/download/{tag}/prokaryote-{tag}.jar".format(tag=version)
 
         request = requests.get(resource, stream=True)
 
-        if not os.path.isfile(prokaryote):
-            with open(prokaryote, "wb") as f:
-                total_length = int(request.headers.get("content-length"))
+        with open(prokaryote, "wb") as f:
+            total_length = int(request.headers.get("content-length"))
 
-                chunks = clint.textui.progress.bar(request.iter_content(chunk_size=32768), expected_size=(total_length / 32768) + 1, hide=not self.verbose)
+            chunks = clint.textui.progress.bar(request.iter_content(chunk_size=32768), expected_size=(total_length / 32768) + 1, hide=not self.verbose)
 
-                for chunk in chunks:
-                    if chunk:
-                        f.write(chunk)
+            for chunk in chunks:
+                if chunk:
+                    f.write(chunk)
 
-                        f.flush()
-
-        dependencies = os.path.abspath(os.path.join(self.build_lib, "prokaryote", "prokaryote-classpath.txt"))
-
-        if not os.path.isfile(dependencies):
-            dependency = open(dependencies, "w")
-
-            dependency.write(prokaryote)
-
-            dependency.close()
-
-        if self.distribution.data_files is None:
-            self.distribution.data_files = []
-        self.distribution.data_files.append(
-            ("prokaryote", [prokaryote, dependencies]))
+                    f.flush()
+        if self.distribution.package_data is None:
+            self.distribution.package_data = {}
+        self.distribution.package_data["prokaryote"] = ["prokaryote.jar"]
         setuptools.command.install.install.run(self)
 
 
