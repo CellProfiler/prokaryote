@@ -15,7 +15,6 @@ setuptools.dist.Distribution({
 with open("prokaryote/__init__.py", "r") as fd:
     version = re.search(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", fd.read(), re.MULTILINE).group(1)
 
-
 class Install(setuptools.command.install.install):
     def run(self):
         try:
@@ -56,6 +55,10 @@ class Install(setuptools.command.install.install):
 
             dependency.close()
 
+        if self.distribution.data_files is None:
+            self.distribution.data_files = []
+        self.distribution.data_files.append(
+            ("prokaryote", [prokaryote, dependencies]))
         setuptools.command.install.install.run(self)
 
 
