@@ -1,3 +1,4 @@
+import distutils.command.build
 import os
 import re
 import setuptools
@@ -14,8 +15,18 @@ setuptools.dist.Distribution({
 
 with open("prokaryote/__init__.py", "r") as fd:
     version = re.search(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", fd.read(), re.MULTILINE).group(1)
-
-class Install(setuptools.command.install.install):
+    
+class FetchProkaryoteJar(setuptools.Command):
+    user_options = [
+        ('prokaryote-version=', None, 'Version # for prokaryote.jar')]
+    
+    def initialize_options(self):
+        self.prokaryote_version = None
+        
+    def finalize_options(self):
+        if self.prokaryote_version is None:
+            self.prokaryote_version = version
+            
     def run(self):
         try:
             import clint.textui
@@ -44,11 +55,9 @@ class Install(setuptools.command.install.install):
                     f.write(chunk)
 
                     f.flush()
-        if self.distribution.package_data is None:
-            self.distribution.package_data = {}
-        self.distribution.package_data["prokaryote"] = ["prokaryote.jar"]
-        setuptools.command.install.install.run(self)
 
+distutils.command.build.build.sub_commands.append(
+    ("fetch_prokaryote_jar", None))
 
 setuptools.setup(
         author="Allen Goodman",
@@ -69,12 +78,13 @@ setuptools.setup(
             "Topic :: Scientific/Engineering"
         ],
         cmdclass={
-            "install": Install
+            "fetch_prokaryote_jar": FetchProkaryoteJar
         },
         include_package_data=True,
         license="BSD",
         name="prokaryote",
         packages=setuptools.find_packages(),
+        package_data = { "prokaryote": ["prokaryote.jar"] },
         setup_requires=[
             "clint",
             "requests"
