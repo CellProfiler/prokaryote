@@ -100,5 +100,6 @@ setuptools.setup(
             "requests"
         ],
         url="https://github.com/CellProfiler/prokaryote",
-        version=version
+        version=version,
+        zip_safe = False
 )
