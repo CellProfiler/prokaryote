@@ -2,6 +2,7 @@ import distutils.command.build
 import os
 import re
 import setuptools
+import setuptools.command.bdist_egg
 import setuptools.command.build_ext
 import setuptools.command.install
 import setuptools.dist
@@ -59,6 +60,14 @@ class FetchProkaryoteJar(setuptools.Command):
 distutils.command.build.build.sub_commands.append(
     ("fetch_prokaryote_jar", None))
 
+# bdist_egg does not execute the build command, it obnoxiously executes
+# each of the pieces
+class BDistEgg(setuptools.command.bdist_egg.bdist_egg):
+    def run(self):
+        if not self.skip_build:
+            self.run_command('fetch_prokaryote_jar')
+        setuptools.command.bdist_egg.bdist_egg.run(self)
+
 setuptools.setup(
         author="Allen Goodman",
         author_email="allen.goodman@icloud.com",
@@ -78,7 +87,8 @@ setuptools.setup(
             "Topic :: Scientific/Engineering"
         ],
         cmdclass={
-            "fetch_prokaryote_jar": FetchProkaryoteJar
+            "fetch_prokaryote_jar": FetchProkaryoteJar,
+            "bdist_egg": BDistEgg
         },
         include_package_data=True,
         license="BSD",
