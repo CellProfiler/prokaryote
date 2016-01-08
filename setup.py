@@ -23,10 +23,14 @@ class FetchProkaryoteJar(setuptools.Command):
     
     def initialize_options(self):
         self.prokaryote_version = None
+        self.build_lib = None
+        self.install_lib = None
         
     def finalize_options(self):
         if self.prokaryote_version is None:
             self.prokaryote_version = version
+        self.set_undefined_options('build', ('build_lib', 'build_lib'))
+        self.set_undefined_options('install', ('install_lib', 'install_lib'))
             
     def run(self):
         try:
@@ -35,7 +39,7 @@ class FetchProkaryoteJar(setuptools.Command):
         except ImportError:
             raise ImportError
 
-        directory = os.path.join("prokaryote")
+        directory = os.path.join(self.build_lib, "prokaryote")
 
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -54,19 +58,14 @@ class FetchProkaryoteJar(setuptools.Command):
             for chunk in chunks:
                 if chunk:
                     f.write(chunk)
-
                     f.flush()
+        
+    def get_outputs(self):
+        return [os.path.join(self.install_lib, "prokaryote", "prokaryote.jar")]
 
-distutils.command.build.build.sub_commands.append(
-    ("fetch_prokaryote_jar", None))
-
-# bdist_egg does not execute the build command, it obnoxiously executes
-# each of the pieces
-class BDistEgg(setuptools.command.bdist_egg.bdist_egg):
-    def run(self):
-        if not self.skip_build:
-            self.run_command('fetch_prokaryote_jar')
-        setuptools.command.bdist_egg.bdist_egg.run(self)
+class Install(setuptools.command.install.install):
+    sub_commands = [("fetch_prokaryote_jar", None)] + \
+        setuptools.command.install.install.sub_commands
 
 setuptools.setup(
         author="Allen Goodman",
@@ -88,13 +87,12 @@ setuptools.setup(
         ],
         cmdclass={
             "fetch_prokaryote_jar": FetchProkaryoteJar,
-            "bdist_egg": BDistEgg
+            "install": Install
         },
         include_package_data=True,
         license="BSD",
         name="prokaryote",
         packages=setuptools.find_packages(),
-        package_data = { "prokaryote": ["prokaryote.jar"] },
         setup_requires=[
             "clint",
             "requests"
