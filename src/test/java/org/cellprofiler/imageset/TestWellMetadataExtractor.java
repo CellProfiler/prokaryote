@@ -47,6 +47,9 @@ public class TestWellMetadataExtractor {
 			}
 		}
 		testWellCase(new String [][] {{ "rOW", "A" }, {"cOl", "01"}}, "A01");
+		testWellCase(new String [][] {{ "row", "02"}, {"col", "04"}}, "B04");
+		testWellCase(new String [][] {{ "row", "00"}, {"col", "01"}}, "0001");
+		testWellCase(new String [][] {{ "row", "25"}, {"col", "01"}}, "2501");
 	}
 	@Test
 	public void testMaybeYouNeedThis() {

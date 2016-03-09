@@ -53,6 +53,15 @@ public class WellMetadataExtractor implements
 			}
 		}
 		if ((wellRow != null) && (wellColumn != null)) {
+			/*
+			 * For Phenix, well row can be numeric
+			 */
+			if (wellRow.matches("\\d+")) {
+				final int rowIndex = Integer.parseInt(wellRow);
+				if ((rowIndex > 0) && (rowIndex <= 24))  {
+					wellRow = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".substring(rowIndex-1, rowIndex);
+				}
+			}
 			return Collections.singletonMap(WELL, StringCache.intern(wellRow + wellColumn));
 		}
 		return emptyMap;
