@@ -158,7 +158,9 @@ public class MetadataUtils {
 			if (keys != null) {
 				if (matcher.group(6) != null) {
 					keys.add(matcher.group(6));
-				} else {
+				} else if (! pattern.substring(matcher.end(), matcher.end()+1).equals("?")) {
+					// If (? ... ), then it is non-capturing.
+					// If (...), then is capturing and needs to be skipped.
 					keys.add(null);
 				}
 			}
