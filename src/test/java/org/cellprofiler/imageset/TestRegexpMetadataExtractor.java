@@ -83,4 +83,17 @@ public class TestRegexpMetadataExtractor {
 				"Plate_A01.png",
 				new String[][] {{ "Well", "A01"}});
 	}
+	@Test
+	public void testNonCapturing() {
+		// Regression test of issue 1843
+		testSomething(
+				"^(?P<Experiment>[0-9]+).+?(?=_p[0-9])_p(?P<Position>[0-9]+)t(?P<Time>[0-9]+)c(?P<ChannelNumber>[0-9]+)",
+				"121201_RCM_HBC_cell density_complete_p01t00001c01.tif",
+				new String [][] {
+						{ "Experiment", "121201" },
+						{ "Position", "01" },
+						{ "Time", "00001" },
+						{ "ChannelNumber", "01" }
+				});
+	}
 }

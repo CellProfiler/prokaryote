@@ -77,6 +77,10 @@ public class Filter<C> {
 			throw new BadFilterExpressionException(reason, expression, this.offset + offset);
 		}
 	}
+	/**
+	 * Find backslash-escaped characters in a quote-escaped string. 
+	 */
+	static private Pattern quoteEscapePattern = Pattern.compile("\\\\(.)");
 	static private int nCachedEntries = 100;
 	final static private Map<Class<?>, Map<String, Filter<?>>> filterCache = new HashMap<Class<?>, Map<String, Filter<?>>>();
 	final static public Random random = new Random(0);
@@ -251,10 +255,6 @@ public class Filter<C> {
 	 * capturing it.
 	 */
 	static private Pattern literalPattern = Pattern.compile("\"((?:[^\\\\\"]|(?:\\\\.))*)\" ?");
-	/**
-	 * Find backslash-escaped characters in a quote-escaped string. 
-	 */
-	static private Pattern quoteEscapePattern = Pattern.compile("\\\\(.)");
 	/*
 	 * Parentheses expressions are separated by a space. A series of parentheses
 	 * expressions is terminated either by end of expression or the end parenthesis
