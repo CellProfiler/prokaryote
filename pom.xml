@@ -89,6 +89,12 @@
             <artifactId>ij1-patcher</artifactId>
             <version>0.12.3</version>
         </dependency>
+        <dependency>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>2.3</version>
+          <type>maven-plugin</type>
+        </dependency>
     </dependencies>
     <parent>
         <groupId>org.scijava</groupId>
@@ -118,7 +124,7 @@
 						</manifestEntries>
 					</archive>
 				</configuration>
-			</plugin>      		
+			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
