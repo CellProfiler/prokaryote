@@ -15,7 +15,7 @@
                     <artifactId>server</artifactId>
                 </exclusion>
             </exclusions>
-            <version>5.2.2-ice35-b17</version>
+            <version>5.3.2-ice36-b62</version>
         </dependency>
         <dependency>
             <groupId>omero</groupId>
@@ -30,22 +30,22 @@
                     <groupId>hsqldb</groupId>
                 </exclusion>
             </exclusions>
-            <version>5.2.2-ice35-b17</version>
+            <version>5.3.2-ice36-b62</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
+            <version>3.5</version>
         </dependency>
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-api</artifactId>
-            <version>5.1.9</version>
+            <version>5.5.1</version>
         </dependency>
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-gpl</artifactId>
-            <version>5.1.9</version>
+            <version>5.5.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -56,17 +56,17 @@
         <dependency>
             <groupId>net.imagej</groupId>
             <artifactId>imagej</artifactId>
-            <version>2.0.0-rc-18</version>
+            <version>2.0.0-rc-61</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
-            <version>1.0.4</version>
+            <version>1.1</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.7</version>
+            <version>1.2.3</version>
         </dependency>
         <!-- FIXME: use `com.opencsv : opencsv : 3.5` rather than `au.com.bytecode : opencsv : 2.4` -->
         <!-- <dependency>
@@ -82,17 +82,17 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
+            <version>1.8.0-alpha2</version>
         </dependency>
         <dependency>
             <groupId>net.imagej</groupId>
             <artifactId>ij1-patcher</artifactId>
-            <version>0.12.3</version>
+            <version>0.12.6</version>
         </dependency>
         <dependency>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.3</version>
+          <version>2.4</version>
           <type>maven-plugin</type>
         </dependency>
     </dependencies>
