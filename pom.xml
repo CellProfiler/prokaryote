@@ -95,6 +95,11 @@
           <version>2.4</version>
           <type>maven-plugin</type>
         </dependency>
+        <dependency>
+            <groupId>net.imglib2</groupId>
+            <artifactId>imglib2-meta</artifactId>
+            <version>2.0.0-beta-26</version>
+        </dependency>
     </dependencies>
     <parent>
         <groupId>org.scijava</groupId>
