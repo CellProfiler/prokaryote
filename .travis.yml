@@ -3,15 +3,11 @@ deploy:
         secure: g2/zjQCyrtaxxBNCrg4Fg/Vhz+IPGeLyMSlhagmJX1h/tO5LjGYfhcwQ42ZAE+HxgrNVYOVsYtKwFJJ3XEbDiv2KM53u6l2XsUOVOdsS1Fbvr3J9HJjkWguaGHMa3dKznbIlaECB98aCcKh5TbXmGw2QRMUqYcwDbsNbd/CLeXWsO4CWJ4mua/0wvcMuzNLeFlj+wQM3wqjjtHfYDcyLMi7Dk7VapKTXG88pxYlBW8kbP8v3k7O32JD2So4wmOaTOmLQkPrZURvArCribcRCunA0I3mfOcqHh1CkqeSafq452nusCV/ZUIDzbG9jYw1UL00mGBgBcwYVy3X5+xfbzV9StQj9iv1CjQOHaioUfdYDaVi/Oadbvb/GkIZurhL6bb7M7oW+kmIJZmEzX0EOY4ZKyPo98kZCcLwqm2LIUG2Kc+eIjesgUFYj2MKHfc30VuurWpQ8k7mifp9NIdpUVKFEbkRYq6hQkuVTFJvv4SDwbnTHsv/QY8C/mV3ucev+Ag7j31aSJX3CaP8M8/sVnTGZSdKl4iyKmLv+pOJMyUVxIvTAh/9NWXzEBY28APhXtviCELatQY7DHdBpc4vi3Hsf/rmNkk9bzgaLIFuNEHxD26Sgs+iaT1t8DdfMfMrBVnsld4A81w/y9cvsuSQTo/LaFu3xqhlTpC1ijsKCWsQ=
     file: target/prokaryote-${TRAVIS_TAG}.jar
     on:
-        jdk: openjdk6
+        jdk: oraclejdk8
         repo: CellProfiler/prokaryote
         tags: true
     provider: releases
     skip_cleanup: true
-jdk:
-    - openjdk6
-    - openjdk7
-    - oraclejdk7
-    - oraclejdk8
+jdk: oraclejdk8
 language: java
 sudo: false
