@@ -7,32 +7,6 @@
     <version>1.0.11</version>
     <dependencies>
         <dependency>
-            <groupId>omero</groupId>
-            <artifactId>blitz</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>omero</groupId>
-                    <artifactId>server</artifactId>
-                </exclusion>
-            </exclusions>
-            <version>5.3.2-ice36-b62</version>
-        </dependency>
-        <dependency>
-            <groupId>omero</groupId>
-            <artifactId>common</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>bio-formats</artifactId>
-                    <groupId>ome</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>hsqldb</artifactId>
-                    <groupId>hsqldb</groupId>
-                </exclusion>
-            </exclusions>
-            <version>5.3.2-ice36-b62</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
@@ -52,11 +26,6 @@
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>net.imagej</groupId>
-            <artifactId>imagej</artifactId>
-            <version>2.0.0-rc-61</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
@@ -90,19 +59,9 @@
             <version>1.7.25</version>
         </dependency>
         <dependency>
-            <groupId>net.imagej</groupId>
-            <artifactId>ij1-patcher</artifactId>
-            <version>0.12.6</version>
-        </dependency>
-        <dependency>
             <groupId>net.imglib2</groupId>
             <artifactId>imglib2-meta</artifactId>
             <version>2.0.0-beta-26</version>
-        </dependency>
-        <dependency>
-            <groupId>net.imagej</groupId>
-            <artifactId>imagej-deprecated</artifactId>
-            <version>0.1.2</version>
         </dependency>
         <dependency>
             <groupId>ome</groupId>
