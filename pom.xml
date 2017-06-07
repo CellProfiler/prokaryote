@@ -276,7 +276,15 @@
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4.1</version>
                 <configuration>
-                    <fail>false</fail>
+                    <fail>true</fail>
+                    <rules>
+                        <enforceBytecodeVersion>
+                            <maxJdkVersion>1.8</maxJdkVersion>
+                            <excludes>
+                                <exclude>org.glassfish:javax.json</exclude>
+                            </excludes>
+                        </enforceBytecodeVersion>
+                    </rules>
                 </configuration>
             </plugin>
             <plugin>
