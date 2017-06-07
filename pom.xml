@@ -93,6 +93,16 @@
             <groupId>net.imagej</groupId>
             <artifactId>imagej-common</artifactId>
             <version>0.24.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>net.imglib2</groupId>
+                    <artifactId>imglib2</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.imglib2</groupId>
+                    <artifactId>imglib2-roi</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>xml-apis</groupId>
