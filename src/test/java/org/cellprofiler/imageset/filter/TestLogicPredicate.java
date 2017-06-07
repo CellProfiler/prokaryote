@@ -12,13 +12,13 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import static org.junit.Assert.*;
+import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Test all of the logic predicates

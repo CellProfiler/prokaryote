@@ -36,8 +36,6 @@
 
 package loci.formats.out;
 
-import java.io.IOException;
-
 import loci.common.RandomAccessInputStream;
 import loci.common.RandomAccessOutputStream;
 import loci.formats.FormatException;
@@ -47,13 +45,10 @@ import loci.formats.ImageTools;
 import loci.formats.codec.CompressionType;
 import loci.formats.gui.AWTImageTools;
 import loci.formats.meta.MetadataRetrieve;
-import loci.formats.tiff.IFD;
-import loci.formats.tiff.TiffCompression;
-import loci.formats.tiff.TiffParser;
-import loci.formats.tiff.TiffRational;
-import loci.formats.tiff.TiffSaver;
+import loci.formats.tiff.*;
 import ome.units.quantity.Length;
-import ome.xml.model.primitives.PositiveFloat;
+
+import java.io.IOException;
 
 /**
  * TiffWriter is the file format writer for TIFF files.

@@ -12,10 +12,10 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import java.util.regex.Pattern;
-
 import org.cellprofiler.imageset.MetadataUtils;
 import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+
+import java.util.regex.Pattern;
 
 /**
  * @author Lee Kamentsky

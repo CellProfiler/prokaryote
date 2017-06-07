@@ -12,14 +12,14 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import static org.junit.Assert.*;
+import org.cellprofiler.imageset.ImageFile;
+import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+import org.junit.Test;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import org.cellprofiler.imageset.ImageFile;
-import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

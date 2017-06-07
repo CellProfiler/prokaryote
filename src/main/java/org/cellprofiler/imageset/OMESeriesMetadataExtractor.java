@@ -13,17 +13,9 @@
 
 package org.cellprofiler.imageset;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import ome.xml.model.*;
 
-import ome.xml.model.Image;
-import ome.xml.model.Pixels;
-import ome.xml.model.Plate;
-import ome.xml.model.Well;
-import ome.xml.model.WellSample;
+import java.util.*;
 
 /**
  * @author Lee Kamentsky

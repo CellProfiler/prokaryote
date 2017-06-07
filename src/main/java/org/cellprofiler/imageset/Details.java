@@ -13,13 +13,12 @@
 
 package org.cellprofiler.imageset;
 
+import javax.json.Json;
+import javax.json.JsonObjectBuilder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
-
-import javax.json.Json;
-import javax.json.JsonObjectBuilder;
 
 /**
  * @author Lee Kamentsky

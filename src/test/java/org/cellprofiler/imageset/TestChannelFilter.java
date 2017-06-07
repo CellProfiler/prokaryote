@@ -12,17 +12,16 @@
  */
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import ome.xml.model.enums.DimensionOrder;
+import org.cellprofiler.imageset.filter.Filter;
+import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import ome.xml.model.enums.DimensionOrder;
-
-import org.cellprofiler.imageset.filter.Filter;
-import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestChannelFilter {
 

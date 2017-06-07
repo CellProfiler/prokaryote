@@ -12,11 +12,10 @@
  */
 package org.cellprofiler.imageset.filter;
 
+import net.imglib2.meta.Axes;
 import org.cellprofiler.imageset.ImagePlane;
 import org.cellprofiler.imageset.ImagePlaneDetails;
 import org.cellprofiler.imageset.ImagePlaneDetailsStack;
-
-import net.imglib2.meta.Axes;
 
 /**
  * @author Lee Kamentsky

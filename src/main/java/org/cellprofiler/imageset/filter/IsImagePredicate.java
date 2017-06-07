@@ -12,13 +12,11 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import java.util.ArrayList;
+import loci.formats.ImageReader;
+
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-
-import loci.formats.ImageReader;
 
 /**
  * @author Lee Kamentsky

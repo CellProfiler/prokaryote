@@ -12,10 +12,10 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import java.util.List;
-
 import org.cellprofiler.imageset.ImageFile;
 import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+
+import java.util.List;
 
 abstract public class AbstractURLPredicateBase  implements
 	FilterPredicate<ImageFile, String> {

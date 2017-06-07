@@ -12,9 +12,9 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import java.util.List;
-
 import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+
+import java.util.List;
 
 /**
  * The LogicPredicate performs a logical operation on its subpredicates

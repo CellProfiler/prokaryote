@@ -12,22 +12,14 @@
  */
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-
 import net.imglib2.meta.TypedAxis;
-
 import org.cellprofiler.imageset.filter.Filter;
 import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
 import org.junit.Test;
+
+import java.util.*;
+
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

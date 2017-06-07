@@ -13,26 +13,18 @@
 
 package org.cellprofiler.imageset;
 
+import net.imglib2.meta.Axes;
+import net.imglib2.meta.AxisType;
+import net.imglib2.meta.TypedAxis;
+import ome.xml.model.*;
+import ome.xml.model.enums.DimensionOrder;
+import ome.xml.model.primitives.NonNegativeInteger;
+import ome.xml.model.primitives.PositiveInteger;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
-
-import ome.xml.model.Annotation;
-import ome.xml.model.Image;
-import ome.xml.model.LongAnnotation;
-import ome.xml.model.OME;
-import ome.xml.model.Pixels;
-import ome.xml.model.Plane;
-import ome.xml.model.StructuredAnnotations;
-import ome.xml.model.TiffData;
-import ome.xml.model.UUID;
-import ome.xml.model.enums.DimensionOrder;
-import ome.xml.model.primitives.NonNegativeInteger;
-import ome.xml.model.primitives.PositiveInteger;
-import net.imglib2.meta.Axes;
-import net.imglib2.meta.AxisType;
-import net.imglib2.meta.TypedAxis;
 
 
 /**

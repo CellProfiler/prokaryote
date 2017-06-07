@@ -12,17 +12,9 @@
  */
 package org.cellprofiler.imageset;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import net.imglib2.meta.*;
 
-import net.imglib2.meta.AbstractTypedSpace;
-import net.imglib2.meta.AxisType;
-import net.imglib2.meta.TypedAxis;
-import net.imglib2.meta.Axes;
-import net.imglib2.meta.DefaultTypedAxis;
+import java.util.*;
 
 /**
  * @author Lee Kamentsky

@@ -12,8 +12,10 @@
  */
 package org.cellprofiler.preferences;
 
-import static org.junit.Assert.*;
-
+import net.imagej.updater.UpToDate;
+import org.cellprofiler.headlesspreferences.HeadlessPreferencesFactory;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -22,18 +24,9 @@ import java.util.List;
 import java.util.WeakHashMap;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
-import java.util.prefs.BackingStoreException;
-import java.util.prefs.NodeChangeEvent;
-import java.util.prefs.NodeChangeListener;
-import java.util.prefs.PreferenceChangeEvent;
-import java.util.prefs.PreferenceChangeListener;
-import java.util.prefs.Preferences;
+import java.util.prefs.*;
 
-import net.imagej.updater.UpToDate;
-
-import org.cellprofiler.headlesspreferences.HeadlessPreferencesFactory;
-import org.junit.Ignore;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

@@ -12,10 +12,10 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import static org.junit.Assert.*;
-
 import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

@@ -13,18 +13,17 @@
 
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
 import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
-
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

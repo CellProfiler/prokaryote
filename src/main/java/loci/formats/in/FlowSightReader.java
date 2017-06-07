@@ -31,29 +31,22 @@
  */
 package loci.formats.in;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
-import javax.xml.parsers.ParserConfigurationException;
-
 import loci.common.DataTools;
 import loci.common.RandomAccessInputStream;
 import loci.common.xml.XMLTools;
-import loci.formats.CoreMetadata;
-import loci.formats.FormatException;
-import loci.formats.FormatReader;
-import loci.formats.FormatTools;
-import loci.formats.MetadataTools;
+import loci.formats.*;
 import loci.formats.meta.MetadataStore;
 import loci.formats.tiff.IFD;
 import loci.formats.tiff.TiffParser;
-
-import ome.xml.model.primitives.PositiveInteger;
-
-import org.xml.sax.SAXException;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * @author Lee Kamentsky

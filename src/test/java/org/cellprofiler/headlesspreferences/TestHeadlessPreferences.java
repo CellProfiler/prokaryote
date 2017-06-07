@@ -12,7 +12,7 @@
  */
 package org.cellprofiler.headlesspreferences;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -20,7 +20,7 @@ import java.util.Set;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky
