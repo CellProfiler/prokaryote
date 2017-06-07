@@ -15,6 +15,16 @@
             <groupId>ome</groupId>
             <artifactId>formats-api</artifactId>
             <version>5.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-xml</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>ome</groupId>
@@ -24,6 +34,42 @@
                 <exclusion>
                     <groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ome</groupId>
+                    <artifactId>formats-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-xml</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-commonl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ome</groupId>
+                    <artifactId>formats-bsd</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.scijava</groupId>
+                    <artifactId>native-lib-loader</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>joda-time</groupId>
+                    <artifactId>joda-time</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -41,6 +87,16 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- FIXME: use `com.opencsv : opencsv : 3.5` rather than `au.com.bytecode : opencsv : 2.4` -->
         <!-- <dependency>
@@ -67,21 +123,89 @@
             <groupId>ome</groupId>
             <artifactId>formats-bsd</artifactId>
             <version>5.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ome</groupId>
+                    <artifactId>formats-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-xml</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.esotericsoftware.kryo</groupId>
+                    <artifactId>kryo</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.openmicroscopy</groupId>
             <artifactId>ome-common</artifactId>
             <version>5.3.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.esotericsoftware.kryo</groupId>
+                    <artifactId>kryo</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.openmicroscopy</groupId>
             <artifactId>ome-xml</artifactId>
             <version>5.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>joda-time</groupId>
+                    <artifactId>joda-time</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.imagej</groupId>
             <artifactId>imagej-updater</artifactId>
             <version>0.8.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>net.imagej</groupId>
+                    <artifactId>imagej-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.scijava</groupId>
+                    <artifactId>scijava-common</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -101,6 +225,14 @@
                 <exclusion>
                     <groupId>net.imglib2</groupId>
                     <artifactId>imglib2-roi</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.scijava</groupId>
+                    <artifactId>scijava-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>edu.ucar</groupId>
+                    <artifactId>udunits</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
