@@ -99,6 +99,47 @@
             <artifactId>imglib2-meta</artifactId>
             <version>2.0.0-beta-26</version>
         </dependency>
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>imagej-deprecated</artifactId>
+            <version>0.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ome</groupId>
+            <artifactId>formats-bsd</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openmicroscopy</groupId>
+            <artifactId>ome-common</artifactId>
+            <version>5.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openmicroscopy</groupId>
+            <artifactId>ome-xml</artifactId>
+            <version>5.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>imagej-updater</artifactId>
+            <version>0.8.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>imagej-common</artifactId>
+            <version>0.24.4</version>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>xerces-2.7.1</version>
+        </dependency>
     </dependencies>
     <parent>
         <groupId>org.scijava</groupId>
