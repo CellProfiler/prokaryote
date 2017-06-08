@@ -12,27 +12,17 @@
  */
 package org.cellprofiler.preferences;
 
+import net.imagej.options.OptionsMisc;
+import net.imagej.updater.UpToDate;
+import org.apache.commons.lang3.SystemUtils;
+import org.cellprofiler.headlesspreferences.HeadlessPreferencesFactory;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ServiceLoader;
-import java.util.WeakHashMap;
-import java.util.prefs.BackingStoreException;
-import java.util.prefs.NodeChangeListener;
-import java.util.prefs.PreferenceChangeListener;
-import java.util.prefs.Preferences;
-import java.util.prefs.PreferencesFactory;
-
-import net.imagej.options.OptionsMisc;
-import net.imagej.updater.UpToDate;
-
-import org.apache.commons.lang3.SystemUtils;
-import org.cellprofiler.headlesspreferences.HeadlessPreferencesFactory;
+import java.util.*;
+import java.util.prefs.*;
 
 /**
  * @author Lee Kamentsky

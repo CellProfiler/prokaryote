@@ -13,8 +13,25 @@
 
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import net.imglib2.meta.Axes;
+import net.imglib2.meta.TypedAxis;
+import ome.xml.model.OME;
+import ome.xml.model.OMEModel;
+import ome.xml.model.OMEModelImpl;
+import ome.xml.model.enums.DimensionOrder;
+import ome.xml.model.enums.EnumerationException;
+import org.junit.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMResult;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.URISyntaxException;
@@ -23,31 +40,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-import javax.xml.transform.dom.DOMResult;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-
-import net.imglib2.meta.Axes;
-import net.imglib2.meta.TypedAxis;
-
-import ome.xml.model.OME;
-import ome.xml.model.OMEModel;
-import ome.xml.model.OMEModelImpl;
-import ome.xml.model.enums.DimensionOrder;
-import ome.xml.model.enums.EnumerationException;
-
-import org.junit.Test;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

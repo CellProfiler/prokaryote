@@ -13,21 +13,14 @@
 
 package org.cellprofiler.imageset;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import ome.xml.model.Channel;
-import ome.xml.model.Image;
-import ome.xml.model.OME;
-import ome.xml.model.Pixels;
-import ome.xml.model.Plane;
-import ome.xml.model.Plate;
-import ome.xml.model.Well;
-import ome.xml.model.WellSample;
+import ome.xml.model.*;
 import ome.xml.model.enums.DimensionOrder;
 import ome.xml.model.primitives.NonNegativeInteger;
 import ome.xml.model.primitives.PositiveInteger;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Lee Kamentsky

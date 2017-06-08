@@ -12,18 +12,16 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import static org.junit.Assert.*;
+import org.cellprofiler.imageset.ImageFile;
+import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+import org.junit.Test;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.cellprofiler.imageset.ImageFile;
-import org.cellprofiler.imageset.ImagePlane;
-import org.cellprofiler.imageset.ImagePlaneDetails;
-import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestFileNamePredicate {
 	static class Expects extends AbstractStringPredicate {

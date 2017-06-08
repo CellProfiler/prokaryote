@@ -12,18 +12,14 @@
  */
 package org.cellprofiler.imageset;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import ome.xml.model.Channel;
 import ome.xml.model.Image;
 import ome.xml.model.Pixels;
 import ome.xml.model.Plane;
 import ome.xml.model.primitives.NonNegativeInteger;
 import ome.xml.model.primitives.PositiveInteger;
+
+import java.util.*;
 
 /**
  * @author Lee Kamentsky

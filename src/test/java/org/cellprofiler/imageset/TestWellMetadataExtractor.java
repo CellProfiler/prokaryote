@@ -12,12 +12,12 @@
  */
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Map;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestWellMetadataExtractor {
 	private ImagePlaneDetails makeIPD(String [][] mapKv) {

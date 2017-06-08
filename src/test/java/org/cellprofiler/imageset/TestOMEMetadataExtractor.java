@@ -12,8 +12,12 @@
  */
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import loci.common.services.DependencyException;
+import loci.common.services.ServiceException;
+import org.junit.Test;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,13 +25,7 @@ import java.io.InputStreamReader;
 import java.nio.CharBuffer;
 import java.util.Map;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-import loci.common.services.DependencyException;
-import loci.common.services.ServiceException;
-
-import org.junit.Test;
-import org.xml.sax.SAXException;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

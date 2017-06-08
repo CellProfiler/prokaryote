@@ -12,12 +12,13 @@
  */
 package org.cellprofiler.runnablequeue;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+
 import static org.junit.Assert.*;
 
 public class TestRunnableQueue {

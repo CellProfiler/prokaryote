@@ -1,7 +1,10 @@
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import ome.xml.model.enums.EnumerationException;
+import org.junit.Test;
 
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -10,12 +13,7 @@ import java.util.List;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-
-import ome.xml.model.enums.EnumerationException;
-
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestImageSet {
 

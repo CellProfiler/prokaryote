@@ -12,21 +12,17 @@
  */
 package org.cellprofiler.imageset.filter;
 
+import org.cellprofiler.imageset.ImageFile;
+import org.cellprofiler.imageset.ImagePlaneDetails;
+import org.cellprofiler.imageset.ImagePlaneDetailsStack;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.cellprofiler.imageset.ImageFile;
-import org.cellprofiler.imageset.ImagePlaneDetails;
-import org.cellprofiler.imageset.ImagePlaneDetailsStack;
 
 /**
  * @author Lee Kamentsky

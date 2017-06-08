@@ -12,13 +12,11 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import static org.junit.Assert.*;
-
 import org.cellprofiler.imageset.ImagePlaneDetailsStack;
 import org.cellprofiler.imageset.Mocks;
-import org.cellprofiler.imageset.OMEPlaneMetadataExtractor;
-import org.cellprofiler.imageset.OMESeriesMetadataExtractor;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

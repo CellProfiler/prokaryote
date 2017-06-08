@@ -12,18 +12,17 @@
  */
 package org.cellprofiler.imageset;
 
+import net.imglib2.meta.Axes;
+import net.imglib2.meta.TypedAxis;
+import ome.xml.model.Image;
+import org.cellprofiler.imageset.filter.Filter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-import net.imglib2.meta.Axes;
-import net.imglib2.meta.TypedAxis;
-import ome.xml.model.Image;
-
-import org.cellprofiler.imageset.filter.Filter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Lee Kamentsky

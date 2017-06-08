@@ -12,19 +12,12 @@
  */
 package org.cellprofiler.imageset;
 
+import au.com.bytecode.opencsv.CSVReader;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-
-
-import au.com.bytecode.opencsv.CSVReader;
+import java.util.*;
 
 /**
  * @author Lee Kamentsky

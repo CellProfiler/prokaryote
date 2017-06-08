@@ -12,26 +12,21 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import static org.junit.Assert.*;
+import org.cellprofiler.imageset.ImageFile;
+import org.cellprofiler.imageset.ImagePlaneDetails;
+import org.cellprofiler.imageset.ImagePlaneDetailsStack;
+import org.cellprofiler.imageset.Mocks;
+import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.Map;
 
-import org.cellprofiler.imageset.ImageFile;
-import org.cellprofiler.imageset.ImagePlane;
-import org.cellprofiler.imageset.ImagePlaneDetails;
-import org.cellprofiler.imageset.ImagePlaneDetailsStack;
-import org.cellprofiler.imageset.Mocks;
-import org.cellprofiler.imageset.OMEPlaneMetadataExtractor;
-import org.cellprofiler.imageset.OMESeriesMetadataExtractor;
-import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
-import org.junit.Test;
-import org.junit.BeforeClass;
-import org.junit.AfterClass;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

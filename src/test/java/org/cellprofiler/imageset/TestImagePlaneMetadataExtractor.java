@@ -12,8 +12,14 @@
  */
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import loci.common.services.DependencyException;
+import loci.common.services.ServiceException;
+import org.cellprofiler.imageset.filter.Filter;
+import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+import org.junit.Test;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -21,15 +27,7 @@ import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-import loci.common.services.DependencyException;
-import loci.common.services.ServiceException;
-
-import org.cellprofiler.imageset.filter.Filter;
-import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
-import org.junit.Test;
-import org.xml.sax.SAXException;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky

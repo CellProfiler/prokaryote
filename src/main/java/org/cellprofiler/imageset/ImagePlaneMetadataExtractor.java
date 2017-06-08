@@ -12,29 +12,21 @@
  */
 package org.cellprofiler.imageset;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.IdentityHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.xml.parsers.ParserConfigurationException;
-
 import loci.common.services.DependencyException;
 import loci.common.services.ServiceException;
-
 import ome.xml.model.Image;
 import ome.xml.model.OME;
 import ome.xml.model.Pixels;
-
 import org.cellprofiler.imageset.filter.Filter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.*;
 
 /**
  * @author Lee Kamentsky

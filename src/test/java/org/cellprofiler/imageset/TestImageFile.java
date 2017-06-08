@@ -1,19 +1,17 @@
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import loci.common.services.DependencyException;
+import loci.common.services.ServiceException;
+import org.junit.Test;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-import loci.common.services.DependencyException;
-import loci.common.services.ServiceException;
-
-import org.junit.Test;
-import org.xml.sax.SAXException;
+import static org.junit.Assert.*;
 
 public class TestImageFile {
 

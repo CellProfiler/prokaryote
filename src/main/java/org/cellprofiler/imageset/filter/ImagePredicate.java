@@ -13,10 +13,10 @@
  */
 package org.cellprofiler.imageset.filter;
 
-import java.util.List;
-
 import org.cellprofiler.imageset.ImagePlaneDetailsStack;
 import org.cellprofiler.imageset.filter.Filter.BadFilterExpressionException;
+
+import java.util.List;
 
 /**
  * @author Lee Kamentsky

@@ -7,66 +7,96 @@
     <version>1.0.11</version>
     <dependencies>
         <dependency>
-            <groupId>omero</groupId>
-            <artifactId>blitz</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>omero</groupId>
-                    <artifactId>server</artifactId>
-                </exclusion>
-            </exclusions>
-            <version>5.2.2-ice35-b17</version>
-        </dependency>
-        <dependency>
-            <groupId>omero</groupId>
-            <artifactId>common</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>bio-formats</artifactId>
-                    <groupId>ome</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>hsqldb</artifactId>
-                    <groupId>hsqldb</groupId>
-                </exclusion>
-            </exclusions>
-            <version>5.2.2-ice35-b17</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
+            <version>3.5</version>
         </dependency>
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-api</artifactId>
-            <version>5.1.9</version>
+            <version>5.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-xml</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-gpl</artifactId>
-            <version>5.1.9</version>
+            <version>5.5.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>ome</groupId>
+                    <artifactId>formats-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-xml</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-commonl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ome</groupId>
+                    <artifactId>formats-bsd</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.scijava</groupId>
+                    <artifactId>native-lib-loader</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>joda-time</groupId>
+                    <artifactId>joda-time</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>net.imagej</groupId>
-            <artifactId>imagej</artifactId>
-            <version>2.0.0-rc-18</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
-            <version>1.0.4</version>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.3</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.7</version>
+            <version>1.2.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- FIXME: use `com.opencsv : opencsv : 3.5` rather than `au.com.bytecode : opencsv : 2.4` -->
         <!-- <dependency>
@@ -82,12 +112,134 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>net.imglib2</groupId>
+            <artifactId>imglib2-meta</artifactId>
+            <version>2.0.0-beta-26</version>
+        </dependency>
+        <dependency>
+            <groupId>ome</groupId>
+            <artifactId>formats-bsd</artifactId>
+            <version>5.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ome</groupId>
+                    <artifactId>formats-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-xml</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.esotericsoftware.kryo</groupId>
+                    <artifactId>kryo</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.openmicroscopy</groupId>
+            <artifactId>ome-common</artifactId>
+            <version>5.3.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.esotericsoftware.kryo</groupId>
+                    <artifactId>kryo</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.openmicroscopy</groupId>
+            <artifactId>ome-xml</artifactId>
+            <version>5.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.openmicroscopy</groupId>
+                    <artifactId>ome-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>joda-time</groupId>
+                    <artifactId>joda-time</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.imagej</groupId>
-            <artifactId>ij1-patcher</artifactId>
-            <version>0.12.3</version>
+            <artifactId>imagej-updater</artifactId>
+            <version>0.8.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>net.imagej</groupId>
+                    <artifactId>imagej-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.scijava</groupId>
+                    <artifactId>scijava-common</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.imagej</groupId>
+            <artifactId>imagej-common</artifactId>
+            <version>0.24.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>net.imglib2</groupId>
+                    <artifactId>imglib2</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.imglib2</groupId>
+                    <artifactId>imglib2-roi</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.scijava</groupId>
+                    <artifactId>scijava-common</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>edu.ucar</groupId>
+                    <artifactId>udunits</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>xerces-2.7.1</version>
         </dependency>
     </dependencies>
     <parent>
@@ -103,10 +255,10 @@
         	<plugin>
         		<groupId>org.apache.maven.plugins</groupId>
         		<artifactId>maven-compiler-plugin</artifactId>
-        		<version>2.3.2</version>
+        		<version>3.6.1</version>
         		<configuration>
-        			<source>1.6</source>
-        			<target>1.6</target>
+        			<source>1.8</source>
+        			<target>1.8</target>
         		</configuration>
       		</plugin>
 			<plugin>
@@ -118,19 +270,27 @@
 						</manifestEntries>
 					</archive>
 				</configuration>
-			</plugin>      		
+			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.4</version>
+                <version>1.4.1</version>
                 <configuration>
-                    <fail>false</fail>
+                    <fail>true</fail>
+                    <rules>
+                        <enforceBytecodeVersion>
+                            <maxJdkVersion>1.8</maxJdkVersion>
+                            <excludes>
+                                <exclude>org.glassfish:javax.json</exclude>
+                            </excludes>
+                        </enforceBytecodeVersion>
+                    </rules>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>2.4.1</version>
+                <version>3.0.0</version>
                 <configuration>
                     <filters>
                         <filter>
@@ -156,6 +316,11 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.4</version>
             </plugin>
         </plugins>
     </build>

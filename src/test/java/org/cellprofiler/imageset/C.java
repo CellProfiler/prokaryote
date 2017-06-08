@@ -12,11 +12,7 @@
  */
 package org.cellprofiler.imageset;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author Lee Kamentsky

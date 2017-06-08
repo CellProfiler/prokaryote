@@ -13,7 +13,6 @@
 package org.cellprofiler.imageset.filter;
 
 import org.cellprofiler.imageset.ImagePlaneDetailsStack;
-import org.cellprofiler.imageset.OMEPlaneMetadataExtractor;
 
 /**
  * @author Lee Kamentsky

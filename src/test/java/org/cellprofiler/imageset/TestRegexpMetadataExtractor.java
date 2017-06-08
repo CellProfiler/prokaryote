@@ -12,13 +12,13 @@
  */
 package org.cellprofiler.imageset;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * @author Lee Kamentsky
