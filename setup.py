@@ -99,5 +99,5 @@ setuptools.setup(
         ],
         url="https://github.com/CellProfiler/prokaryote",
         version=version,
-        zip_safe = False
+        zip_safe=False
 )
