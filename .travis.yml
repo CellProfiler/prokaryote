@@ -1,5 +1,5 @@
 before_install:
-  - pip install --upgrade pip setuptools twine wheel
+  - sudo pip install --upgrade pip setuptools twine wheel
 deploy:
     on:
         repo: CellProfiler/prokaryote
@@ -11,4 +11,3 @@ deploy:
     user: "0x00B1"
 jdk: oraclejdk8
 language: java
-sudo: false
