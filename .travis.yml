@@ -10,5 +10,6 @@ deploy:
     skip_cleanup: true
     user: "0x00B1"
 dist: trusty
+install: pip install --editable .
 language: python
 sudo: required
