@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>pom-scijava</artifactId>
+    <groupId>org.scijava</groupId>
+    <version>10.4.1</version>
+    <relativePath>../pom.xml/pom.xml</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.cellprofiler</groupId>
+  <artifactId>prokaryote</artifactId>
+  <name>prokaryote</name>
+  <version>2.1.0</version>
+  <description>CellProfiler’s Java dependencies</description>
+  <url>https://github.com/CellProfiler/prokaryote</url>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/CellProfiler/prokaryote/issues</url>
+  </issueManagement>
+  <ciManagement />
+  <inceptionYear>2015</inceptionYear>
+  <developers>
+    <developer>
+      <id>mbray</id>
+      <name>Mark Bray</name>
+      <email>mbray@broadinstitute.org</email>
+      <organization>Broad Institute</organization>
+      <organizationUrl>http://broadinstitute.org</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+    <developer>
+      <id>anne</id>
+      <name>Anne Carpenter</name>
+      <email>anne@broadinstitute.org</email>
+      <organization>Broad Institute</organization>
+      <organizationUrl>http://broadinstitute.org</organizationUrl>
+      <roles>
+        <role>principal investigator</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+    <developer>
+      <id>thouis</id>
+      <name>Ray Jones</name>
+      <email>thouis@seas.harvard.edu</email>
+      <organization>Harvard University</organization>
+      <organizationUrl>http://seas.harvard.edu</organizationUrl>
+      <roles>
+        <role>developer</role>
+        <role>emeritus</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+    <developer>
+      <id>leek</id>
+      <name>Lee Kamentsky</name>
+      <email>leek@broadinstitute.org</email>
+      <organization>Broad Institute</organization>
+      <organizationUrl>http://broadinstitute.org</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+    <developer>
+      <id>vebjorn</id>
+      <name>Vebjorn Ljosa</name>
+      <email>vebjorn@broadinstitute.org</email>
+      <organization>Broad Institute</organization>
+      <organizationUrl>http://broadinstitute.org</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+    <developer>
+      <id>dlogan</id>
+      <name>David Logan</name>
+      <email>dlogan@broadinstitute.org</email>
+      <organization>Broad Institute</organization>
+      <organizationUrl>http://broadinstitute.org</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>GNU General Public License, version 2 (GPL-2.0)</name>
+      <url>http://opensource.org/licenses/GPL-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:git:git://github.com/CellProfiler/prokaryote</connection>
+    <developerConnection>scm:git:git@github.com:CellProfiler/prokaryote</developerConnection>
+    <url>https://github.com/CellProfiler/prokaryote</url>
+  </scm>
+  <organization>
+    <name>Eli and Edythe L. Broad Institute of MIT and Harvard’s Imaging Platform</name>
+    <url>https://www.broadinstitute.org/scientific-community/science/platforms/imaging/imaging-platform</url>
+  </organization>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Premain-Class>net.imagej.patcher.JavaAgent</Premain-Class>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.4.1</version>
+        <configuration>
+          <fail>true</fail>
+          <rules>
+            <enforceBytecodeVersion>
+              <maxJdkVersion>1.8</maxJdkVersion>
+              <excludes>
+                <exclude>org.glassfish:javax.json</exclude>
+              </excludes>
+            </enforceBytecodeVersion>
+          </rules>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <filters>
+            <filter>
+              <artifact>*:*</artifact>
+              <excludes>
+                <exclude>META-INF/*.DSA</exclude>
+                <exclude>META-INF/*.RSA</exclude>
+                <exclude>META-INF/*.SF</exclude>
+              </excludes>
+            </filter>
+          </filters>
+          <transformers>
+            <transformer>
+              <resource>META-INF/json/org.scijava.plugin.Plugin</resource>
+            </transformer>
+          </transformers>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.4</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>install</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.basedir}/prokaryote</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>target</directory>
+                  <includes>
+                    <include>${project.build.finalName}.jar</include>
+                  </includes>
+                  <filtering>false</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <id>sonatype-nexus-releases</id>
+      <name>Sonatype Nexus Releases</name>
+      <url>https://oss.sonatype.org/content/repositories/releases</url>
+    </repository>
+    <repository>
+      <id>imagej.public</id>
+      <url>http://maven.imagej.net/content/groups/public</url>
+    </repository>
+    <repository>
+      <id>ome.releases</id>
+      <url>http://artifacts.openmicroscopy.org/artifactory/ome.releases</url>
+    </repository>
+    <repository>
+      <id>ome.snapshots</id>
+      <url>http://artifacts.openmicroscopy.org/artifactory/ome.snapshots</url>
+    </repository>
+    <repository>
+      <id>ome-web-prod.lifesci.dundee.ac.uk</id>
+      <url>http://artifacts.openmicroscopy.org/artifactory/springsource-release</url>
+    </repository>
+    <repository>
+      <id>com.springsource.repository.bundles.release</id>
+      <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+      <url>http://repository.springsource.com/maven/bundles/release</url>
+    </repository>
+    <repository>
+      <id>com.springsource.repository.bundles.external</id>
+      <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+      <url>http://repository.springsource.com/maven/bundles/external</url>
+    </repository>
+    <repository>
+      <id>com.springsource.repository.libraries.release</id>
+      <name>SpringSource Enterprise Bundle Repository - SpringSource Library Releases</name>
+      <url>http://repository.springsource.com/maven/libraries/release</url>
+    </repository>
+    <repository>
+      <id>com.springsource.repository.libraries.external</id>
+      <name>SpringSource Enterprise Bundle Repository - External Library Releases</name>
+      <url>http://repository.springsource.com/maven/libraries/external</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>hamcrest-core</artifactId>
+          <groupId>org.hamcrest</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+  <properties>
+    <bio-formats.version>5.1.7</bio-formats.version>
+  </properties>
+</project>
+
