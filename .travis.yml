@@ -10,6 +10,7 @@ deploy:
     skip_cleanup: true
     user: "0x00B1"
 dist: trusty
-install: pip install --editable .
+install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 language: python
+script: mvn test -B
 sudo: required
