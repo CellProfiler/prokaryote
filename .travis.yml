@@ -8,6 +8,6 @@ deploy:
     skip_cleanup: true
     user: "0x00B1"
 install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-jdk: oraclejdk8
 language: python
 script: mvn test -B
+sudo: false
