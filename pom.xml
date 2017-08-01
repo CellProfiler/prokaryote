@@ -279,7 +279,7 @@
                     <fail>true</fail>
                     <rules>
                         <enforceBytecodeVersion>
-                            <maxJdkVersion>1.7</maxJdkVersion>
+                            <maxJdkVersion>1.8</maxJdkVersion>
                             <excludes>
                                 <exclude>org.glassfish:javax.json</exclude>
                             </excludes>
