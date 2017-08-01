@@ -9,5 +9,4 @@ deploy:
     user: "0x00B1"
 language: java
 install: pip install twine
-jdk: oraclejdk8
 sudo: false
