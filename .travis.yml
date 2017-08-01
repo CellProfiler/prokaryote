@@ -1,3 +1,5 @@
+before_install:
+  - jdk_switcher use oraclejdk8
 deploy:
     on:
         repo: CellProfiler/prokaryote
@@ -7,5 +9,6 @@ deploy:
     provider: pypi
     skip_cleanup: true
     user: "0x00B1"
-language: java
-install: sudo pip install twine
+dist: trusty
+language: python
+sudo: required
