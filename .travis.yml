@@ -1,13 +1,12 @@
 deploy:
-    api_key:
-        secure: g2/zjQCyrtaxxBNCrg4Fg/Vhz+IPGeLyMSlhagmJX1h/tO5LjGYfhcwQ42ZAE+HxgrNVYOVsYtKwFJJ3XEbDiv2KM53u6l2XsUOVOdsS1Fbvr3J9HJjkWguaGHMa3dKznbIlaECB98aCcKh5TbXmGw2QRMUqYcwDbsNbd/CLeXWsO4CWJ4mua/0wvcMuzNLeFlj+wQM3wqjjtHfYDcyLMi7Dk7VapKTXG88pxYlBW8kbP8v3k7O32JD2So4wmOaTOmLQkPrZURvArCribcRCunA0I3mfOcqHh1CkqeSafq452nusCV/ZUIDzbG9jYw1UL00mGBgBcwYVy3X5+xfbzV9StQj9iv1CjQOHaioUfdYDaVi/Oadbvb/GkIZurhL6bb7M7oW+kmIJZmEzX0EOY4ZKyPo98kZCcLwqm2LIUG2Kc+eIjesgUFYj2MKHfc30VuurWpQ8k7mifp9NIdpUVKFEbkRYq6hQkuVTFJvv4SDwbnTHsv/QY8C/mV3ucev+Ag7j31aSJX3CaP8M8/sVnTGZSdKl4iyKmLv+pOJMyUVxIvTAh/9NWXzEBY28APhXtviCELatQY7DHdBpc4vi3Hsf/rmNkk9bzgaLIFuNEHxD26Sgs+iaT1t8DdfMfMrBVnsld4A81w/y9cvsuSQTo/LaFu3xqhlTpC1ijsKCWsQ=
-    file: target/prokaryote-${TRAVIS_TAG}.jar
     on:
-        jdk: oraclejdk8
         repo: CellProfiler/prokaryote
         tags: true
-    provider: releases
+    password:
+        secure: qiTqut7Rft9LoRb7n0Ev7puZWSMfhWDxajeZ3DRwjt9cw50ViBWyIk6xCnjY7Yyrq8b5XJ/llnqjLAQ1Nh3zzAKS3IFbSTExQXucIgvwaEtfO7209ruU1Ar24q6gz+1qMBiTx8s5vcLvQNYAxqVozFnQcxy5Gme2YwjXclJamFj4Tzz/e37O1Tk6CXqyI1gdDUCl2b7Qxtb5vfjYiCE6u+9TArhOXtorDPQ9t0GOxVytgFocCN195IAL34CckQKLGutEYjO0ZoWNfgZ611HKw5K3MvTROAkBAQ6UdqA8twWTIknaxm9wFG1m04XrrSpHscQhAYNvM894g+4D28QXNobMmrd7trDjpTs9TguMkomCuNLict5hMsiutn72ZauB0iKbmc4CD2IEUHv4swcEH/7XQD2oGmTzskidpWk09pmxVFBRyP61ek+y4dAmYLpDqs/1nepUK3pedG96lvM0Ku23apcs1Lc57O1S2TfzvANUjfkZipOpuYZaYbKHEsCcDYFBvOZ6170AsR7TQfVuxpfFXdm8ORm3AtaRH1zSCxM6iXcin1sjJld/58aLZd0OUQj+/Gz5ZH5LAol7h/C1WN6A7KylBJV6dVc87jLUlOFl3QOC6ZruuocjTfQ+vDsW/80lBu63/LoJ9btwmoUyZdFSAvIB/vcHUH5BIvqRC0o=
+    provider: pypi
     skip_cleanup: true
+    user: "0x00B1"
 jdk: oraclejdk8
 language: java
 sudo: false
