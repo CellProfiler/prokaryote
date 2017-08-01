@@ -8,5 +8,4 @@ deploy:
     skip_cleanup: true
     user: "0x00B1"
 language: java
-install: pip install twine
-sudo: false
+install: sudo pip install twine
