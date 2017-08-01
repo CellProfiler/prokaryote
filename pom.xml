@@ -327,15 +327,18 @@
                 <executions>
                     <execution>
                         <id>copy-resources</id>
-                        <phase>validate</phase>
+                        <phase>install</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.basedir}</outputDirectory>
+                            <outputDirectory>${project.basedir}/prokaryote</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>target/${project.build .finalName}.jar</directory>
+                                    <directory>target</directory>
+                                    <includes>
+                                        <include>${project.build.finalName}.jar</include>
+                                    </includes>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>
