@@ -7,7 +7,7 @@ deploy:
     provider: pypi
     skip_cleanup: true
     user: "0x00B1"
-install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-language: python
-script: mvn test -B
+language: java
+install: pip install twine
+jdk: oraclejdk8
 sudo: false
