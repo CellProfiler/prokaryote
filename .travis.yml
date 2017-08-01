@@ -1,3 +1,5 @@
+before_install:
+  - pip install --upgrade pip setuptools twine wheel
 deploy:
     on:
         repo: CellProfiler/prokaryote
