@@ -14,7 +14,7 @@
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-api</artifactId>
-            <version>5.5.3</version>
+            <version>5.7.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.openmicroscopy</groupId>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-gpl</artifactId>
-            <version>5.5.3</version>
+            <version>5.7.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -122,7 +122,7 @@
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-bsd</artifactId>
-            <version>5.5.3</version>
+            <version>5.7.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>ome</groupId>
@@ -248,7 +248,7 @@
         <version>10.4.1</version>
     </parent>
     <properties>
-        <bio-formats.version>5.1.7</bio-formats.version>
+        <bio-formats.version>5.7.0</bio-formats.version>
     </properties>
     <build>
         <plugins>
