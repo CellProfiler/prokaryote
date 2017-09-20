@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.cellprofiler</groupId>
     <artifactId>prokaryote</artifactId>
-    <version>2.3.0</version>
+    <version>2.3.1</version>
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-api</artifactId>
-            <version>5.7.0</version>
+            <version>5.7.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.openmicroscopy</groupId>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-gpl</artifactId>
-            <version>5.7.0</version>
+            <version>5.7.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -122,7 +122,7 @@
         <dependency>
             <groupId>ome</groupId>
             <artifactId>formats-bsd</artifactId>
-            <version>5.7.0</version>
+            <version>5.7.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>ome</groupId>
@@ -248,7 +248,7 @@
         <version>10.4.1</version>
     </parent>
     <properties>
-        <bio-formats.version>5.7.0</bio-formats.version>
+        <bio-formats.version>5.7.1</bio-formats.version>
     </properties>
     <build>
         <plugins>
