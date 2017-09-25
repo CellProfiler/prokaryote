@@ -39,9 +39,12 @@ public class TestBioFormats {
                 "org/cellprofiler/imageset/omexml.xml");
         Path path = Paths.get(resource.toURI());
 
-        try (ImageReader reader = new ImageReader()) {
+        ImageReader reader = new ImageReader();
+        try {
             reader.setId(path.toString());
             assertEquals(4, reader.getSeriesCount());
+        } finally {
+            reader.close();
         }
     }
 
