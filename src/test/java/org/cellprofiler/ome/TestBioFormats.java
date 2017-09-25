@@ -13,7 +13,16 @@ package org.cellprofiler.ome;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import loci.formats.FormatException;
+import loci.formats.ImageReader;
+
+import static org.junit.Assert.assertEquals;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 /**
@@ -24,8 +33,16 @@ import static org.junit.Assert.assertNotNull;
 public class TestBioFormats {
 
     @Test
-    public void testOnClasspath() throws ClassNotFoundException {
-        assertNotNull(Class.forName("loci.formats.ImageReader"));
+    public void testImageReaderInstantiation()
+            throws URISyntaxException, FormatException, IOException {
+        URL resource = this.getClass().getClassLoader().getResource(
+                "org/cellprofiler/imageset/omexml.xml");
+        Path path = Paths.get(resource.toURI());
+
+        try (ImageReader reader = new ImageReader()) {
+            reader.setId(path.toString());
+            assertEquals(4, reader.getSeriesCount());
+        }
     }
 
 }
