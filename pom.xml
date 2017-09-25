@@ -81,11 +81,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
-            <version>xerces-2.7.1</version>
-        </dependency>
     </dependencies>
     <parent>
         <groupId>org.scijava</groupId>
