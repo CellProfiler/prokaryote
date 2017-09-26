@@ -30,7 +30,7 @@ setuptools.setup(
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Science/Research",
-        "License :: OSI Approved :: BSD License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
         "Programming Language :: Java",
         "Programming Language :: Python :: 2",
