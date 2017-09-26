@@ -117,7 +117,7 @@
                 -->
                 <exclusion>
                     <groupId>edu.ucar</groupId>
-                    <artifactId>grib</artifactId>
+                    <artifactId>bufr</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>edu.ucar</groupId>
