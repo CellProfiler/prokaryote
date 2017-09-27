@@ -13,63 +13,236 @@
         </dependency>
         <dependency>
             <groupId>ome</groupId>
-            <artifactId>formats-api</artifactId>
+            <artifactId>formats-gpl</artifactId>
             <version>5.7.1</version>
             <exclusions>
+                <!-- Only has the side effect of rendering
+                     loci.formats.gui.CacheComponent inoperable.
+                -->
                 <exclusion>
-                    <groupId>org.openmicroscopy</groupId>
-                    <artifactId>ome-xml</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
+                    <groupId>com.jgoodies</groupId>
+                    <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>ome</groupId>
-            <artifactId>formats-gpl</artifactId>
-            <version>5.7.1</version>
+            <groupId>omero</groupId>
+            <artifactId>blitz</artifactId>
+            <version>5.3.4-ice36-b69</version>
+            <!-- Exclusion list cribbed from https://github.com/glencoesoftware/omero-ms-core/blob/master/build.gradle -->
             <exclusions>
                 <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
+                    <groupId>antlr</groupId>
+                    <artifactId>antlr</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>ome</groupId>
-                    <artifactId>formats-api</artifactId>
+                    <groupId>asm</groupId>
+                    <artifactId>asm-attrs</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.openmicroscopy</groupId>
-                    <artifactId>ome-common</artifactId>
+                    <groupId>backport-util-concurrent</groupId>
+                    <artifactId>backport-util-concurrent</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
+                    <groupId>batik</groupId>
+                    <artifactId>batik-all</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.openmicroscopy</groupId>
-                    <artifactId>ome-xml</artifactId>
+                    <groupId>cglib</groupId>
+                    <artifactId>cglib</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.openmicroscopy</groupId>
-                    <artifactId>ome-commonl</artifactId>
+                    <groupId>com.codahale.metrics</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.jamonapi</groupId>
+                    <artifactId>jamon</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.mortennobel</groupId>
+                    <artifactId>java-image-scaling</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.zeroc</groupId>
+                    <artifactId>freeze</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.zeroc</groupId>
+                    <artifactId>icefreeze</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.zeroc</groupId>
+                    <artifactId>icegrid</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.zeroc</groupId>
+                    <artifactId>icestorm</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-beanutils</groupId>
+                    <artifactId>commons-beanutils</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-codec</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-pool</groupId>
+                    <artifactId>commons-pool</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dom4j</groupId>
+                    <artifactId>dom4j</artifactId>
+                </exclusion>
+                <!-- The following are defined independently due to the SciJava
+                     org.scijava.maven.plugin.enforcer.BanDuplicateClasses
+                     plugin.
+                -->
+                <exclusion>
+                    <groupId>edu.ucar</groupId>
+                    <artifactId>bufr</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>edu.ucar</groupId>
+                    <artifactId>grib</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>freemarker</groupId>
+                    <artifactId>freemarker</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>geronimo-spec</groupId>
+                    <artifactId>geronimo-spec-jta</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>gnu.getopt</groupId>
+                    <artifactId>java-getopt</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>hsqldb</groupId>
+                    <artifactId>hsqldb</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.jts</groupId>
+                    <artifactId>jts</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.sf.ehcache</groupId>
+                    <artifactId>ehcache-core</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>ome</groupId>
                     <artifactId>formats-bsd</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.scijava</groupId>
-                    <artifactId>native-lib-loader</artifactId>
+                    <groupId>ome</groupId>
+                    <artifactId>formats-gpl</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>joda-time</groupId>
-                    <artifactId>joda-time</artifactId>
+                    <groupId>omero</groupId>
+                    <artifactId>dsl</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
+                    <groupId>omero</groupId>
+                    <artifactId>omero-shares</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpmime</artifactId>
+                </exclusion>
+                <!-- The following is defined independently due to the SciJava
+                     org.scijava.maven.plugin.enforcer.BanDuplicateClasses
+                     plugin.  It is actually excluded by the `org.hibernate:*`
+                     exclude below.
+                -->
+                <exclusion>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjrt</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.btm</groupId>
+                    <artifactId>btm</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <!-- The following is defined independently due to the SciJava
+                     org.scijava.maven.plugin.enforcer.BanDuplicateClasses
+                     plugin.
+                -->
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.hibernate.javax.persistence</groupId>
+                    <artifactId>hibernate-jpa-2.0-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.ini4j</groupId>
+                    <artifactId>ini4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.subethamail</groupId>
+                    <artifactId>subethasmtp</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>pdfbox</groupId>
+                    <artifactId>pdfbox</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>quartz</groupId>
+                    <artifactId>quartz</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xercesImpl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>zeroc</groupId>
+                    <artifactId>ice-db</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -77,26 +250,6 @@
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
             <version>1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <!-- FIXME: use `com.opencsv : opencsv : 3.5` rather than `au.com.bytecode : opencsv : 2.4` -->
         <!-- <dependency>
@@ -110,87 +263,9 @@
             <version>2.4</version>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
-        <dependency>
             <groupId>net.imglib2</groupId>
             <artifactId>imglib2-meta</artifactId>
             <version>2.0.0-beta-26</version>
-        </dependency>
-        <dependency>
-            <groupId>ome</groupId>
-            <artifactId>formats-bsd</artifactId>
-            <version>5.7.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ome</groupId>
-                    <artifactId>formats-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.openmicroscopy</groupId>
-                    <artifactId>ome-xml</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.esotericsoftware.kryo</groupId>
-                    <artifactId>kryo</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.openmicroscopy</groupId>
-            <artifactId>ome-common</artifactId>
-            <version>5.3.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.esotericsoftware.kryo</groupId>
-                    <artifactId>kryo</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.google.guava</groupId>
-                    <artifactId>guava</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>xml-apis</groupId>
-                    <artifactId>xml-apis</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.openmicroscopy</groupId>
-            <artifactId>ome-xml</artifactId>
-            <version>5.5.3</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.openmicroscopy</groupId>
-                    <artifactId>ome-common</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>joda-time</groupId>
-                    <artifactId>joda-time</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.imagej</groupId>
@@ -198,12 +273,8 @@
             <version>0.8.3</version>
             <exclusions>
                 <exclusion>
-                    <groupId>net.imagej</groupId>
-                    <artifactId>imagej-common</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.scijava</groupId>
-                    <artifactId>scijava-common</artifactId>
+                    <groupId>net.imglib2</groupId>
+                    <artifactId>imglib2-roi</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -212,34 +283,6 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.imagej</groupId>
-            <artifactId>imagej-common</artifactId>
-            <version>0.24.4</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>net.imglib2</groupId>
-                    <artifactId>imglib2</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.imglib2</groupId>
-                    <artifactId>imglib2-roi</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.scijava</groupId>
-                    <artifactId>scijava-common</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>edu.ucar</groupId>
-                    <artifactId>udunits</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
-            <version>xerces-2.7.1</version>
         </dependency>
     </dependencies>
     <parent>
