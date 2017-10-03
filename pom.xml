@@ -304,16 +304,6 @@
         			<target>1.7</target>
         		</configuration>
       		</plugin>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifestEntries>
-							<Premain-Class>net.imagej.patcher.JavaAgent</Premain-Class>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
