@@ -13,6 +13,7 @@ package org.cellprofiler.ome;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.lang.reflect.InvocationTargetException;
@@ -52,6 +53,8 @@ public class TestOmero {
         method = klass.getMethod("unwrap", omero.RType.class);
         assertNotNull(method);
         object = method.invoke(null, object);
+        assertNotNull(object);
+        assertEquals(1, object);
     }
 
 }
