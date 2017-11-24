@@ -287,6 +287,11 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>net.imagej</groupId>
+                <artifactId>ij1-patcher</artifactId>
+                <version>0.12.6</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
