@@ -109,24 +109,20 @@ public class ImageFile implements Comparable<ImageFile>{
 					int lastSepIndex = path.lastIndexOf("/");
 					if (lastSepIndex <= 0) {
 						final URI uriOut = new URI(uri.getScheme(), uri.getHost(), null, null);
-						pathName = uriOut.toURL().toString();
+						pathName = uriOut.toString();
 					} else {
 						final URI uriOut = new URI(
 								uri.getScheme(), 
 								uri.getHost(), 
 								path.substring(0, lastSepIndex),
 								null);
-						pathName = uriOut.toURL().toString();
+						pathName = uriOut.toString();
 					}
 				}
 			} catch (URISyntaxException e) {
 				LoggerFactory.getLogger(getClass()).info(
 						"Failed to extract metadata from badly formed URL: " + 
 						uri.toString());
-				return null;
-			} catch (MalformedURLException e) {
-				LoggerFactory.getLogger(getClass()).warn(
-						String.format("Failed to reconstitute path from URL, \"%s\"", uri.toString()));
 				return null;
 			}
 		}
