@@ -1,4 +1,3 @@
-before_install: jdk_switcher use oraclejdk8
 deploy:
   on:
     repo: CellProfiler/prokaryote
@@ -10,6 +9,8 @@ deploy:
   user: '0x00B1'
 dist: trusty
 install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+jdk:
+  - openjdk10
 language: python
 script: mvn test -B
 sudo: required
