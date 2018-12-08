@@ -10,7 +10,7 @@ deploy:
 dist: trusty
 install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 jdk:
-  - openjdk10
+  - openjdk11
 language: python
 script: mvn test -B
 sudo: required
