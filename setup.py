@@ -41,6 +41,9 @@ setuptools.setup(
     ],
     license="BSD",
     name="prokaryote",
+    install_requires=[
+        "python-javabridge>=4.0.0rc2"
+    ],
     package_data={
         "prokaryote": [
             "prokaryote-{}.jar".format(__version__)
