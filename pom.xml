@@ -26,9 +26,14 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>omero</groupId>
-            <artifactId>blitz</artifactId>
-            <version>5.3.4-ice36-b69</version>
+            <groupId>com.zeroc</groupId>
+            <artifactId>glacier2</artifactId>
+            <version>3.6.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openmicroscopy</groupId>
+            <artifactId>omero-blitz</artifactId>
+            <version>5.5.8</version>
             <!-- Exclusion list cribbed from https://github.com/glencoesoftware/omero-ms-core/blob/master/build.gradle -->
             <exclusions>
                 <exclusion>
@@ -44,8 +49,12 @@
                     <artifactId>backport-util-concurrent</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>batik</groupId>
+                    <groupId>org.apache.xmlgraphics</groupId>
                     <artifactId>batik-all</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.activation</groupId>
+                    <artifactId>javax.activation</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>cglib</groupId>
@@ -160,14 +169,6 @@
                     <artifactId>formats-gpl</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>omero</groupId>
-                    <artifactId>dsl</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>omero</groupId>
-                    <artifactId>omero-shares</artifactId>
-                </exclusion>
-                <exclusion>
                     <groupId>org.apache.lucene</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
@@ -223,6 +224,14 @@
                 <exclusion>
                     <groupId>org.springframework</groupId>
                     <artifactId>spring-orm</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-aop</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>org.springframework.security</groupId>
