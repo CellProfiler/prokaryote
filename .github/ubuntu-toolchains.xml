@@ -11,4 +11,13 @@
             <jdkHome>${env.JAVA_HOME_8_X64}</jdkHome>
         </configuration>
     </toolchain>
+    <toolchain>
+        <type>jdk</type>
+        <provides>
+            <version>16</version>
+        </provides>
+        <configuration>
+            <jdkHome>${env.JAVA_HOME_16_X64}</jdkHome>
+        </configuration>
+    </toolchain>
 </toolchains>
