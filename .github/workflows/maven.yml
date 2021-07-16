@@ -21,7 +21,7 @@ jobs:
         architecture: x64
         python-version: 3.8
     - name: Set up JDK8
-    - uses: AdoptOpenJDK/install-jdk@v1
+      uses: AdoptOpenJDK/install-jdk@v1
       with:
         version: '1.8'
         architecture: x64
