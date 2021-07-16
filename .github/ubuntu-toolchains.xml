@@ -8,7 +8,7 @@
             <version>1.8</version>
         </provides>
         <configuration>
-            <jdkHome>${env.JAVA_HOME_8_X64}</jdkHome>
+            <jdkHome>${env.JAVA_8_HOME}</jdkHome>
         </configuration>
     </toolchain>
     <toolchain>
