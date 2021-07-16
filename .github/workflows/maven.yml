@@ -30,7 +30,7 @@ jobs:
     - name: Test
       run: mvn test -B --settings .mvn/custom-settings.xml 
     - name: Build Python package
-      run: python setup.py
+      run: python setup.py sdist
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
       with:
