@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         # Artifact name
-        name: prokaryote.*gz
+        name: prokaryote-2.4.2.tar.gz
         path: dist/
     
     
