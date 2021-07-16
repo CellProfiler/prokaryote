@@ -8,7 +8,7 @@
             <version>1.8</version>
         </provides>
         <configuration>
-            <jdkHome>${env.JAVA_8_HOME}</jdkHome>
+            <jdkHome>/opt/hostedtoolcache/jdk-1.8-hotspot/1.0.0/x64</jdkHome>
         </configuration>
     </toolchain>
     <toolchain>
@@ -17,7 +17,7 @@
             <version>16</version>
         </provides>
         <configuration>
-            <jdkHome>${env.JAVA_HOME}</jdkHome>
+            <jdkHome>/opt/hostedtoolcache/jdk-16-hotspot/1.0.0/x64</jdkHome>
         </configuration>
     </toolchain>
 </toolchains>
