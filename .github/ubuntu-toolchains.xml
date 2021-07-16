@@ -17,7 +17,7 @@
             <version>16</version>
         </provides>
         <configuration>
-            <jdkHome>${env.JAVA_HOME_16_X64}</jdkHome>
+            <jdkHome>${env.JAVA_HOME}</jdkHome>
         </configuration>
     </toolchain>
 </toolchains>
