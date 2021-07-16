@@ -20,13 +20,21 @@ jobs:
       with:
         architecture: x64
         python-version: 3.8
+    - name: Set up JDK 8
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'adopt'
     - name: Set up JDK 16
       uses: actions/setup-java@v2
       with:
         java-version: '16'
         distribution: 'adopt'
+    - name: Inspect environment
+      run: |
+        set | grep JAVA
     - name: Test
-      run: mvn test -B -V -e --settings .mvn/custom-settings.xml 
+      run: mvn test -B -V -e --settings .mvn/custom-settings.xml --global-toolchains .github/ubuntu-toolchains.xml
     - name: Build Python package
       run: python setup.py sdist
     - name: Upload a Build Artifact
