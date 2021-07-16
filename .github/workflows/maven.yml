@@ -26,10 +26,10 @@ jobs:
     - name: Test
       run: mvn test -B
     - name: Upload a Build Artifact
-  uses: actions/upload-artifact@v2.2.4
-  with:
-    # Artifact name
-    name: prokaryote.*gz
-    path: dist
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        # Artifact name
+        name: prokaryote.*gz
+        path: dist/
     
     
