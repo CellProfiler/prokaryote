@@ -34,8 +34,10 @@ jobs:
     - name: Inspect environment
       run: |
         set | grep JAVA
+    - name: CheckThatFile
+      run: cat .github/ubuntu-toolchains.xml
     - name: Test
-      run: mvn test -B -V -e --settings .mvn/custom-settings.xml
+      run: mvn test -B -V -e --settings .mvn/custom-settings.xml --global-toolchains .github/ubuntu-toolchains.xml
     - name: Build Python package
       run: python setup.py sdist
     - name: Upload a Build Artifact
