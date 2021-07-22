@@ -25,13 +25,19 @@ jobs:
       with:
         java-version: 8
         distribution: adopt
+    - name: Build with Maven
+      run: mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -e --settings .mvn/custom-settings.xml
     - name: Build maven
       run: mvn test -B --settings .mvn/custom-settings.xml
     - name: uhoh
       run: |
+        echo "2"
         ls ../..
+        echo "1"
         ls ..
+        echo "0"
         ls  
+        echo "1"
         ls prokaryote/
     - name: Build Python package
       run: python setup.py sdist
