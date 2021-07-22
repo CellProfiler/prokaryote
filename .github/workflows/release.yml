@@ -24,8 +24,10 @@ jobs:
       with:
         java-version: 8
         distribution: adopt
-    - name: Build maven
-      run: mvn test -B -V -e --settings .mvn/custom-settings.xml
+    - name: Build with Maven
+      run: |
+        mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -e --settings .mvn/custom-settings.xml
+        mvn test -B --settings .mvn/custom-settings.xml
     - name: Build Python package
       run: python setup.py sdist
     - id: get_version
@@ -34,7 +36,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         # Artifact name
-        name: prokaryote-{{ steps.get_version.outputs.version-without-v }}.tar.gz
+        name: prokaryote-${{ steps.get_version.outputs.version-without-v }}.tar.gz
         path: dist/
     - name: pypi-publish
       uses: pypa/gh-action-pypi-publish@v1.4.2
