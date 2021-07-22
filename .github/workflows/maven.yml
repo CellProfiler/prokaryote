@@ -20,24 +20,13 @@ jobs:
       with:
         architecture: x64
         python-version: 3.8
-    - name: Set up JDK8
-      uses: AdoptOpenJDK/install-jdk@v1
+    - name: Setup Java JDK
+      uses: actions/setup-java@v2.1.0
       with:
-        version: '1.8'
-        architecture: x64
-        targets: 'JAVA_8_HOME'
-    - name: Set up JDK 16
-      uses: AdoptOpenJDK/install-jdk@v1
-      with:
-        version: '16'
-        architecture: x64
-    - name: Inspect environment
-      run: |
-        set | grep JAVA
-    - name: CheckThatFile
-      run: cat .github/ubuntu-toolchains.xml
-    - name: Test
-      run: mvn test -B -V -e --settings .mvn/custom-settings.xml --global-toolchains .github/ubuntu-toolchains.xml
+        java-version: 8
+        distribution: adopt
+    - name: Build maven
+      run: mvn test -B -V -e 
     - name: Build Python package
       run: python setup.py sdist
     - name: Upload a Build Artifact
