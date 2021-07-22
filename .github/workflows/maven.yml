@@ -28,10 +28,11 @@ jobs:
     - name: Build maven
       run: mvn test -B -V -e --settings .mvn/custom-settings.xml
     - name: uhoh
-      run: ls ../..
-      run: ls ..
-      run: ls  
-      run: ls prokaryote/
+      run: |
+        ls ../..
+        ls ..
+        ls  
+        ls prokaryote/
     - name: Build Python package
       run: python setup.py sdist
     - name: Upload a Build Artifact
