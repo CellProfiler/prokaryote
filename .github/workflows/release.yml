@@ -1,0 +1,43 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Release
+
+on:
+  release:
+    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
+    types: [published]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        architecture: x64
+        python-version: 3.8
+    - name: Setup Java JDK
+      uses: actions/setup-java@v2.1.0
+      with:
+        java-version: 8
+        distribution: adopt
+    - name: Build maven
+      run: mvn test -B -V -e --settings .mvn/custom-settings.xml
+    - name: Build Python package
+      run: python setup.py sdist
+    - id: get_version
+      uses: battila7/get-version-action@v2
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        # Artifact name
+        name: prokaryote-{{ steps.get_version.outputs.version-without-v }}.tar.gz
+        path: dist/
+    - name: pypi-publish
+      uses: pypa/gh-action-pypi-publish@v1.4.2
+      with:
+        password: ${{ secrets.PYPITOKEN }}
+        skip_existing: True
