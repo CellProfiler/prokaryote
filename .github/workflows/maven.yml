@@ -28,7 +28,7 @@ jobs:
     - name: Build maven
       run: mvn test -B -V -e --settings .mvn/custom-settings.xml
     - name: uhoh
-      run: ls
+      run: ls prokaryote/
     - name: Build Python package
       run: python setup.py sdist
     - name: Upload a Build Artifact
