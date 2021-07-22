@@ -26,7 +26,7 @@ jobs:
         java-version: 8
         distribution: adopt
     - name: Build maven
-      run: mvn test -B -V -e 
+      run: mvn test -B -V -e --settings .mvn/custom-settings.xml
     - name: Build Python package
       run: python setup.py sdist
     - name: Upload a Build Artifact
