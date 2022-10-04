@@ -7,3 +7,4 @@
 build
 dist
 target
+dependency-reduced-pom.xml

@@ -5,37 +5,34 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-      with:
-        architecture: x64
-        python-version: 3.8
-    - name: Setup Java JDK
-      uses: actions/setup-java@v2.1.0
-      with:
-        java-version: 8
-        distribution: adopt
-    - name: Build with Maven
-      run: |
-        mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -e --settings .mvn/custom-settings.xml
-        mvn test -B --settings .mvn/custom-settings.xml
-    - name: Build Python package
-      run: python setup.py sdist
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.2.4
-      with:
-        # Artifact name
-        name: prokaryote-2.4.4.tar.gz
-        path: dist/
-    
-    
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          architecture: x64
+          python-version: 3.8
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.1.0
+        with:
+          java-version: 8
+          distribution: adopt
+      - name: Build with Maven
+        run: |
+          mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -e
+          mvn test -B
+      - name: Build Python package
+        run: python setup.py sdist
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          # Artifact name
+          name: prokaryote-2.4.4.tar.gz
+          path: dist/

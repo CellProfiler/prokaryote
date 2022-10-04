@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.cellprofiler</groupId>
     <artifactId>prokaryote</artifactId>
-    <version>2.4.4</version>
+    <version>2.4.5</version>
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -503,45 +503,9 @@
     </contributors>
     <repositories>
         <repository>
-            <id>sonatype-nexus-releases</id>
-            <name>Sonatype Nexus Releases</name>
-            <url>https://oss.sonatype.org/content/repositories/releases</url>
-        </repository>
-        <repository>
-            <id>imagej.public</id>
-            <url>http://maven.imagej.net/content/groups/public</url>
-        </repository>
-        <repository>
-            <id>ome.releases</id>
-            <url>http://artifacts.openmicroscopy.org/artifactory/ome.releases</url>
-        </repository>
-        <repository>
-            <id>ome.snapshots</id>
-            <url>http://artifacts.openmicroscopy.org/artifactory/ome.snapshots</url>
-        </repository>
-        <repository>
-            <id>ome-web-prod.lifesci.dundee.ac.uk</id>
-            <url>http://artifacts.openmicroscopy.org/artifactory/springsource-release</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.bundles.release</id>
-            <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
-            <url>http://repository.springsource.com/maven/bundles/release</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.bundles.external</id>
-            <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
-            <url>http://repository.springsource.com/maven/bundles/external</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.libraries.release</id>
-            <name>SpringSource Enterprise Bundle Repository - SpringSource Library Releases</name>
-            <url>http://repository.springsource.com/maven/libraries/release</url>
-        </repository>
-        <repository>
-            <id>com.springsource.repository.libraries.external</id>
-            <name>SpringSource Enterprise Bundle Repository - External Library Releases</name>
-            <url>http://repository.springsource.com/maven/libraries/external</url>
+            <id>scijava-public</id>
+            <name>SciJava</name>
+            <url>https://maven.scijava.org/content/groups/public</url>
         </repository>
     </repositories>
     <issueManagement>
