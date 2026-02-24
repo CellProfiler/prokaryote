@@ -9,13 +9,13 @@ on:
 jobs:
 
 
-  build:
+  wheel:
     strategy:
       max-parallel: 2
       # let some wheels complete even if others fail
       fail-fast: false
       matrix:
-        python_version: ['3.8', '3.9']
+        python_version: ['3.9']
     runs-on: ubuntu-latest
 
     steps:
@@ -40,13 +40,9 @@ jobs:
     - name: Build Python package
       run: python setup.py bdist_wheel
 
-    - id: get_version
-      uses: battila7/get-version-action@v2
-
-    - id: inspection
+    - name: Inspection
       run: |
-          echo ${{ steps.get_version.outputs.version-without-v }}
-          ls -al .
+          ls -al build
 
 
     #- name: Store artifacts
