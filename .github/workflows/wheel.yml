@@ -1,0 +1,46 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Wheel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  wheel:
+    strategy:
+      max-parallel: 2
+      # let some wheels complete even if others fail
+      fail-fast: false
+      matrix:
+        python_version: ['3.9']
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Python ${{ matrix.python_version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python_version }}
+        architecture: x64
+
+    - name: Setup Java JDK
+      uses: actions/setup-java@v2.1.0
+      with:
+        java-version: 8
+        distribution: adopt
+    - name: Build with Maven
+      run: |
+        mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -e --settings .mvn/custom-settings.xml
+        mvn test -B --settings .mvn/custom-settings.xml
+
+    - name: Build Python package
+      run: python setup.py bdist_wheel
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        # Artifact name
+        name: prokaryote-2.4.4-py2.py3-none-any.whl
+        path: dist/
